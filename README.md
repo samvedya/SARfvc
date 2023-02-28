@@ -17,5 +17,5 @@ Classified image with five diffrent flood classess
 	
 **Files**
 
-Mask.m - Prior probablities drived from masks for EPFM.m 
-EPFM.m - Codes for Extended Probabilistic Flood Mapping 
+Mask.m - Prior probablities drived from masks for EPFM.m \n
+EPFM.m - Extended Probabilistic Flood Mapping 
