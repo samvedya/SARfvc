@@ -1,8 +1,11 @@
-%% Extended probabilistic flood mapping
+%% 
+%  Extended probabilistic flood mapping
 %  Deleniation of flood from SAR data%%
 %  DATE OF CREATION OF DOCUMENT: 16/09/2021 
 %  AUTHOR: SAMVEDYA SURAMPUDI @Microwave lab, VIT University %%
 %%
+
+% Reading SAR images
 
 area11=imread("subset_4_of_ALOS2-FBDR2_1GUA-ORBIT__ALOS2095460510-160228_Spk.tif"); % pre flood 
 area11_cal=(10*(log10(area11.*area11)))-83; % ALOS2 Calibration
