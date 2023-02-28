@@ -87,7 +87,7 @@ priorcls5=length(cls5)/length(table);
 
 
 % One variable and 5 classes
-% Fitting each class to gamma distribution
+% Fitting each class to inverse guassian distribution
 pdcls1 = fitdist(double(cls1+100),'InverseGaussian');
 pdcls2 = fitdist(double(cls2+100),'InverseGaussian');
 pdcls3 = fitdist(double(cls3+100),'InverseGaussian');
