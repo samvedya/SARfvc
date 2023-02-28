@@ -1,5 +1,5 @@
 # Probabilistic-flood-mapping
-SAR image classification based on Bayesian Infrence for identification of flooded features
+**SAR image classification based on Bayesian Infrence for identification of flooded features**
 
 
 Extended probabilistic flood inundation mapping method uses Bayesian Inference to classify the Synthetic Aperture Radar images during flood.
