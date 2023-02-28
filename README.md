@@ -8,7 +8,7 @@ Uses LULC derived masks for calculating priors.
 
 **Inputs**
 
-Land Use Land Cover map (LULC)
+Land Use Land Cover map (LULC)   
 SAR images - During Flood, Pre flood
 
 **Outputs**
@@ -17,5 +17,5 @@ Classified image with five diffrent flood classess
 	
 **Files**
 
-Mask.m - Prior probablities drived from masks for EPFM.m \n
+Mask.m - Prior probablities drived from masks for EPFM.m   
 EPFM.m - Extended Probabilistic Flood Mapping 
