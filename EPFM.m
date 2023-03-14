@@ -99,11 +99,11 @@ reF_vec100=reF_vec+100;
 
 % Calculation of independent conditional probability
 
-pdf_cls1= pdf('InverseGaussian',cls1+100,pdcls1.mu,pdcls1.lambda); % Gamma distribution
-pdf_cls2= pdf('InverseGaussian',cls2+100,pdcls2.mu,pdcls2.lambda); % Gamma distribution
-pdf_cls3= pdf('InverseGaussian',cls3+100,pdcls3.mu,pdcls3.lambda); % Gamma distribution
-pdf_cls4= pdf('InverseGaussian',cls4+100,pdcls4.mu,pdcls4.lambda); % Gamma distribution
-pdf_cls5= pdf('InverseGaussian',cls5+100,pdcls5.mu,pdcls5.lambda); % Gamma distribution
+pdf_cls1= pdf('InverseGaussian',cls1+100,pdcls1.mu,pdcls1.lambda); 
+pdf_cls2= pdf('InverseGaussian',cls2+100,pdcls2.mu,pdcls2.lambda); 
+pdf_cls3= pdf('InverseGaussian',cls3+100,pdcls3.mu,pdcls3.lambda); 
+pdf_cls4= pdf('InverseGaussian',cls4+100,pdcls4.mu,pdcls4.lambda); 
+pdf_cls5= pdf('InverseGaussian',cls5+100,pdcls5.mu,pdcls5.lambda); 
 
 % Prediction
 % Independent conditional probability for each class label
