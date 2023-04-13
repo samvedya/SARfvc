@@ -9,7 +9,7 @@ function [layer1,layer2,layer3]= Lc2msk(lulc, nfeat)
 
 % Example1
 % img=imread('lulc.tif')
-% Lc2msk(img)
+% [l1,l2,l3]=Lc2msk(img)
 % mask1=layer1{1,1}
 
 % Written by Samvedya Surampudi@ VIT University 
