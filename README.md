@@ -7,7 +7,7 @@ This method elimaminates misclassifications during flood mapping in vegetated ar
 Uses LULC derived masks for calculating priors.  
 This repository contains three file.  
 - EPFM.m - the main file which does the classification  
-- Lc2msk - Function which produces binary masks from LULC required for EPFM.m
+- Lc2msk - Function gives binary masks for eah feature from LULC required for EPFM.m
 - Mask.m - Allows to create your own ROI from LULC
 
 **Inputs**
