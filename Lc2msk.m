@@ -38,7 +38,7 @@ tab=unique(table(count,B2(:))); tab=table2array(tab);
  for i=1:nf
     layer2{i}=ones(size(lulc,1),size(lulc,2));
     layer2{i}(find(B2~=tab(end-i,2:2)))=0; 
-    figure(i)
+    figure(i+nf)
     imshow(layer2{i})
  end
 
@@ -50,7 +50,7 @@ tab=unique(table(count,B3(:))); tab=table2array(tab);
  for i=1:nf
     layer3{i}=ones(size(lulc,1),size(lulc,2));
     layer3{i}(find(B3~=tab(end-i,2:2)))=0; 
-    figure(i)
+    figure(i+(2*nf))
     imshow(layer3{i})
  end
 
