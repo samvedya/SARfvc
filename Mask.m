@@ -15,6 +15,7 @@ figure(1)
 
 % Extraction of water bodies
 % Create ROIs for water bodies
+% Allows to draw upto 16 ROIs on the figure. Proceed to next step only after drawing 16 ROIs
 f=area22_cal; 
 figure(2)
 imshow(area11_cal,[135,170])
