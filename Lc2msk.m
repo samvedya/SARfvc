@@ -1,7 +1,7 @@
 function [layer1,layer2,layer3]= Lc2msk(lulc, nfeat)
 
 % Lc2msk CONVERTS EACH FEATURE IN LULC AS SEPERATE BINARY MASK
-% Input LULC map should be RGB image
+% Input LULC map -- RGB image
 % nfeat - Specify number of classes in your input LULC map
 % The output is three layer cells. Each cell stores features from
 % one of the three bands. 
