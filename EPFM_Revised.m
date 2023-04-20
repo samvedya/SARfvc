@@ -4,19 +4,15 @@
 %  AUTHOR: SAMVEDYA SURAMPUDI @Microwave lab, VIT University %%
 %%
 lulc=imread('EPFMLulc3Georef.png'); %lulc
-imshow(lulc)
 area1=imread("FloodHV.tif"); % flood 
 area1= medfilt2(area1);
 area11_cal=(10*(log10(area1.*area1)))-83; % ALOS2 Calibration
-area2=imread("PrefloodHV.tif"); % pre flood
-area2=area2(1:size(area1,1),1:size(area1,2));
-area22_cal=(10*(log10(area2.*area2)))-83; % Calibration
+pol=imread('PauliRGB_georef.tif');
 figure(13)
-imshow(lulc)
+imshow(pol(:,:,4),[])
 
+%%
 [l1,l2,l3]=Lc2msk(lulc,4);
-
-
 hyd=l3{1,2}; % Water
 imshow(hyd)
 bul=l2{1,3};% Buildings
@@ -61,16 +57,24 @@ road_sar(road_sar==-inf)=mean(road_sar(find(road_sar~=-inf)));
 ot_sar=area11_cal(find(hyd==0&bul==0&veg==0&wetl==0&road==0));
 ot_sar(ot_sar==-inf)=mean(ot_sar(find(ot_sar~=-inf))); 
 
-mode(hyd_sar)
-mode(bul_sar)
-mode(veg_sar)
-mode(wetl_sar)
-mode(road_sar)
-mode(ot_sar)
+%%
+% Initializing the lengths
+if (size(area11_cal,1)<size(area11_cal,2))
+    len=size(area11_cal,1);
+else
+    len=size(area11_cal,2);
+end
+len_hyd=length(hyd_sar);
+len_bul=length(bul_sar);
+len_veg=length(veg_sar);
+len_wetl=length(wetl_sar);
+len_road=length(road_sar);
+len_ot=length(ot_sar);
+
+%%
 
 
-
-% Imp
+% Imp para
 cls_ini(find(hyd==1))=hyd_sar;
 cls_ini(find(bul==1))=bul_sar;
 cls_ini(find(veg==1))=veg_sar;
@@ -96,26 +100,70 @@ figure
 imshow(map1,[]); impixelinfo;
 colormap jet; impixelinfo;
 
+len_m=max([length(hyd_sar),length(bul_sar),length(veg_sar),length(hyd_sar),length(wetl_sar),length(road_sar),length(ot_sar)]);
+hyd_sar(end+1:len_m)=(max(hyd_sar)-min(hyd_sar)).*rand((len_m-length(hyd_sar)),1) + min(hyd_sar);
+veg_sar(end+1:len_m)=(max(veg_sar)-min(veg_sar)).*rand((len_m-length(veg_sar)),1) + min(veg_sar);
+wetl_sar(end+1:len_m)=(max(wetl_sar)-min(wetl_sar)).*rand((len_m-length(wetl_sar)),1) + min(wetl_sar);
+bul_sar(end+1:len_m)=(max(bul_sar)-min(bul_sar)).*rand((len_m-length(bul_sar)),1) + min(bul_sar);
+road_sar(end+1:len_m)=(max(road_sar)-min(road_sar)).*rand((len_m-length(road_sar)),1) + min(road_sar);
+ot_sar(end+1:len_m)=(max(ot_sar)-min(ot_sar)).*rand((len_m-length(ot_sar)),1) + min(ot_sar);
 
-figure(2)
-color = lines(6);
+data=[hyd_sar,bul_sar,veg_sar,wetl_sar,road_sar,ot_sar];
+plot(data(1:1000,:))
 
+Mdl = rica(data,4);
 
-g={wetl_sar(1:100),veg_sar(1:100)};
-figure(1)
-gscatter(wetl_sar(1:100),veg_sar(1:100),g,color(1:2,:),'.',30,'off');
+%%
 
-g1={hyd_sar(1:100),bul_sar(1:100)};
-figure(2)
-gscatter(hyd_sar(1:100),bul_sar(1:100),g1,color(1:2,:),'.',30,'off');
-
-g2={ot_sar(1:100),road_sar(1:100)};
 figure(3)
-gscatter(ot_sar(1:100),road_sar(1:100),g2,color(1:2,:),'.',30,'off');
+col1 = [0 1 0]; %G
+col2 = [1 0 0]; %R
+cmap = interp1([col1; col2], linspace(1, 2, 500)); % Create the colormap
+colormap(cmap)
+hold on;
+h=scatter3(hyd_sar(1:500),wetl_sar(1:500),bul_sar(1:500),[],hyd_sar(1:500),'filled');
+view(-25,25)
+ax=gca;
+ax.XGrid = 'on';
+ax.YGrid = 'on';
+ax.ZGrid = 'on';
+h.MarkerEdgeColor = 'k';     % Set marker edge color to black
+xlabel('X')
+ylabel('Y')
+zlabel('Z')
 
-g3={hyd_sar(1:100),veg_sar(1:100)};
+
+
+g={hyd_sar(1:1000),wetl_sar(1:1000),bul_sar(1:1000)};
+redu=tsne_d(area11_cal(1:len,1:len));
+g={redu(:,1),redu(:,2)};
+figure(5)
+gscatter(redu(:,1),redu(:,2),g,color(1:2,:),'.',30,'off');
+
+
+
+
+g1={wetl_sar(1:1000),veg_sar(1:1000)};
+figure(1)
+gscatter(wetl_sar(1:1000),veg_sar(1:1000),g1,color(4:5,:),'.',30,'off');
+
+
+g2={hyd_sar(1:100),bul_sar(1:100)};
+figure(2)
+gscatter(hyd_sar(1:100),bul_sar(1:100),g2,color(1:2,:),'.',30,'off');
+
+g3={ot_sar(1:100),road_sar(1:100)};
+figure(3)
+gscatter(ot_sar(1:100),road_sar(1:100),g3,color(1:2,:),'.',30,'off');
+
+g4={hyd_sar(1:100),veg_sar(1:100)};
 figure(4)
-gscatter(hyd_sar(1:100),veg_sar(1:100),g3,color(1:2,:),'.',30,'off');
+gscatter(hyd_sar(1:100),veg_sar(1:100),g4,color(1:2,:),'.',30,'off');
+
+
+g4={ot_sar(1:100),road_sar(1:100),wetl_sar(1:100),bul_sar(1:100)};
+figure(4)
+gscatter(hyd_sar(1:100),veg_sar(1:100),g4,color(1:6,:),'.',30,'off');
 
 
 %gscatter(hyd_sar(1:100),bul_sar(1:100),g,'rbmk','^os*',9,'off')
@@ -231,6 +279,8 @@ pdf_cls6= pdf('InverseGaussian',cls6+100,pdcls5.mu,pdcls6.lambda); % Gamma distr
 % Prediction
 % Independent conditional probability for each class label
 % For class label 1
+% py1=priorcls1.*pdf(pdcls1,F_vec100)*100;
+% py1=round(py1,2);
 
 %1==hyd
 py1=pr_hyd.*pdf(pdcls1,F_vec100)*100;
@@ -238,6 +288,8 @@ py1=round(py1,2);
 
 % 2==bul
 % For class label 2
+%
+
 py2=pr_bul.*pdf(pdcls2,F_vec100)*100;
 py2=round(py2,2);
 
@@ -248,6 +300,7 @@ py3=round(py3,2);
 
 % 4==wetl
 % For class label 4
+%
 py4=pr_wetl.*pdf(pdcls4,F_vec100)*100;
 py4=round(py4,2);
 
@@ -323,5 +376,4 @@ CM2=confusionchart(cls_fin,clasify2,'RowSummary','row-normalized','ColumnSummary
 cort=find(swap==new1);
 accuracy=(length(cort)/length(swap))*100;
 cp = classperf(one,two);
-
 
