@@ -12,7 +12,7 @@ function [layer1,layer2,layer3]= Lc2msk(lulc, nfeat)
 % [l1,l2,l3]=Lc2msk(img,4)
 % mask1=l1{1,1} or % mask2=l2{1,4}
 
-% Written by Samvedya Surampudi@ VIT University 
+% (C) Samvedya Surampudi@ VIT University 
 
 
 nf=nfeat; 
