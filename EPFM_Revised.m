@@ -1,5 +1,4 @@
-%% Extended probabilistic flood mapping
-%  Creating masks from LULC data%%
+%% SAR flood mapping
 %  DATE OF CREATION OF DOCUMENT: 16/09/2021 
 %  AUTHOR: SAMVEDYA SURAMPUDI @Microwave lab, VIT University %%
 %%
