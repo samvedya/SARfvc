@@ -1,4 +1,4 @@
-# Probabilistic-Flood-Mapping
+# SAR-Flood-Mapping
 > **SAR image classification based on Bayesian Infrence for identification of flooded features**
 
 
