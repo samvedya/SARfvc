@@ -34,7 +34,7 @@ c=imread(c);                                             % SAR Pre-flood
 c=medfilt2(c);                                           % Speckle filtering
 p_flood=(10*(log10(c.*c)))-83;                           % ALOS2 Calibration
 p_flood(p_flood==-inf)=mean(p_flood(find(p_flood~=-inf)));                                                                 
-pol=imread(d);                                         % Scattering model based classification
+pol=imread(d); pol=double(pol);                          % Scattering model based classification
 
 % Equilizing dimensions of all data sets
 if (size(flood,1)<size(flood,2))
