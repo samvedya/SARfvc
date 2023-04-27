@@ -32,7 +32,7 @@ pol=imread('Scat_Mod_Class_georef_fin.tif');
 len=1036;
 pol=pol(1:len,1:len);
 
-%cmap=rand(16,3); \\ Commnet for now -- Remove omment later
+cmap=rand(16,3); \\
 figure(1);imshow(pol,[]); colormap (cmap); impixelinfo; % training
 % Finding all classes in other than buildings,wetlands and roads area
 SOM=ot.*double(pol); %  Others
