@@ -8,7 +8,6 @@ Uses LULC derived masks for calculating priors.
 This repository contains three file.  
 - EPFM.m - the main file which does the classification  
 - Lc2msk - Function gives binary masks for each feature from LULC required for EPFM.m
-- Mask.m - Allows to create your own ROI from LULC
 
 **Inputs**
 
