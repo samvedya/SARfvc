@@ -25,7 +25,7 @@ disp('Select georeferenced POLSAR classified image..................')
 
 
 
-lulc = imread(a);                                        % LULC
+a = imread(a);                                           % LULC
 b = imread(b);                                           % SAR flood 
 b = medfilt2(b);                                         % Speckle filtering
 flood=(10*(log10(b.*b)))-83;                             % ALOS2 Calibration
@@ -41,7 +41,9 @@ if (size(flood,1)<size(flood,2))
     len=size(flood,1);
 else
     len=size(flood,2);
+end
 
+lulc(:,:,1)=a(:,:,1);lulc(:,:,2)=a(:,:,2);lulc(:,:,3)=a(:,:,3);
 lulc=lulc(1:len,1:len,:);
 flood=flood(1:len,1:len);
 p_flood=p_flood(1:len,1:len);
