@@ -57,6 +57,5 @@ figure(3); imshow(p_flood,[]);
 figure(4); cmap=rand(16,3);imshow(pol,[]); colormap (cmap); impixelinfo
 
 
-
 end
 
