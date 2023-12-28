@@ -36,7 +36,8 @@ from the link on the [MathWorks website](https://www.mathworks.com/products/comp
 ![Upload data](https://github.com/samvedya/SARfvc/blob/e66c4a635bb22ff99a2a4396bcca38133b76dda8/Images/DataUpload1.png)
 
 
-**STEP 5:** Select the number of classes from the list. This step ensures your image to be classified into number of classes that the user has chosen. 
+**STEP 5:** Select the number of classes from the list. This step ensures your image to be classified into number of classes that the user has chosen.   
+
 ![Upload data](https://github.com/samvedya/SARfvc/blob/ac42d12ad4460b0a2268c6aebdc29eb86d3f4458/Images/NumofClasses.png)  
 
 **STEP 6:** Let the program run. User will receive the status once the operation is complete.  
