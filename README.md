@@ -47,4 +47,6 @@ from the link on the [MathWorks website](https://www.mathworks.com/products/comp
 
 **STEP 7:** The output is written into the folder with the name _"classified"_. 
 
-![Upload data](https://github.com/samvedya/SARfvc/blob/ac42d12ad4460b0a2268c6aebdc29eb86d3f4458/Images/ClassifiedImage.png)
+![Upload data](https://github.com/samvedya/SARfvc/blob/ac42d12ad4460b0a2268c6aebdc29eb86d3f4458/Images/ClassifiedImage.png)  
+
+Please write for any issues [here](https://github.com/samvedya/SARfvc/issues)
