@@ -33,7 +33,10 @@ from the link on the [MathWorks website](https://www.mathworks.com/products/comp
 **STEP 3:** If you run the executable with exisitng MATLAB in your system, set the path to your data folder.   
 **STEP 4:** When you run the program it prompts for data as shown below. Select your folder and upload the data in order.
 
-![Upload data](https://github.com/samvedya/SARfvc/blob/e66c4a635bb22ff99a2a4396bcca38133b76dda8/Images/DataUpload1.png)
+![Upload data](https://github.com/samvedya/SARfvc/blob/e66c4a635bb22ff99a2a4396bcca38133b76dda8/Images/DataUpload1.png)  
+
+Please write for any issues [here](https://github.com/samvedya/SARfvc/issues)
+
 
 
 **STEP 5:** Select the number of classes from the list. This step ensures your image to be classified into number of classes that the user has chosen.   
