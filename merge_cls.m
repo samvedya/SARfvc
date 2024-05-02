@@ -22,7 +22,7 @@ if nargin==3
     count=grouptransform(pol(:),pol(:),@numel); % Counts for each class
     tab=unique(table(count,pol(:))); tab=table2array(tab); % table with counts respective to each class
 
-    for i=1:nc
+    for i=1:length(tab)
         layer1{i}=ones(size(pol,1),size(pol,2));
         layer1{i}(find(pol~=tab(end-i+1,2:2)))=0; 
 %         figure(i)
@@ -48,8 +48,9 @@ end
      
 lab_new=unique(pol_new);
 figure(1)
-imshow(pol_new,[]);colormap (rand(16,3)); impixelinfo;   
- 
+% imshow(pol_new,[]);colormap (rand(16,3)); impixelinfo;   
+% title('PoLSAR decomposed image with merged classes')
+% 
 
 
 end
