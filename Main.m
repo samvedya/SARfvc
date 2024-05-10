@@ -106,7 +106,7 @@ time=toc;
 % plot(X,Y); xlabel('False positive rate'); ylabel('True positive rate')
 
 
-% I think Ive to assign names to new class labels and then compare the
+% Ive to assign names to new class labels and then compare the
 % model.  Test here and change in GMM
 % Test all the models with different n_class
 % the zero class is coming because of unclassified pixels. 
@@ -134,14 +134,7 @@ time=toc;
 % set(gca, 'XLim', xlb)
 % pause
 
-% i=imread('Alos_Decomp.tif'); 
-% i=imrotate(i,180);
-% i=flipdim(i,2);
-% 
-% 
-% i1=i(:,:,1);i2=i(:,:,2);i3=i(:,:,3);i4=i(:,:,4);
-% i5=i(:,:,5);i6=i(:,:,6);i7=i(:,:,7);
-% 
+
 
 
 
