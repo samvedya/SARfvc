@@ -1,5 +1,5 @@
 # About 
-<p align="justify">Flood mapping using Synthetic Aperture Radar data impose limitations in fully distinguishing flood under vegetation due to false double bounce returns from inundated tree trunks along with seasonal heterogeneities devised from changing land cover settings. SARfvcVer1 (SAR Flood Vegetation Classifier version-1) is a fully automatic supervised classification tool that uses hybrid Naïve Bayes classifier and is used to detect various flooded vegetation classes. The tool eliminates ROI selection step. It incorporates polarimetric information/LULC in labelling the image. It works best in identifying floods in agricultural lands and forests.  </p>
+<p align="justify">Flood mapping using Synthetic Aperture Radar data impose limitations in fully distinguishing flood under vegetation due to false double bounce returns from inundated tree trunks along with seasonal heterogeneities devised from changing land cover settings. SARfvcVer1 (SAR Flood Vegetation Classifier version-1) is a fully automatic supervised classification tool that uses hybrid Naïve Bayes classifier and is used to detect various flooded vegetation classes. The tool eliminates ROI creation step. It incorporates polarimetric information/LULC in labelling the image. It works best in identifying floods in agricultural lands and forests.  </p>
 
 # Installation 
 
