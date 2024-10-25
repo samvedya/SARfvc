@@ -50,3 +50,19 @@ from the link on the [MathWorks website](https://www.mathworks.com/products/comp
 ![Upload data](https://github.com/samvedya/SARfvc/blob/ac42d12ad4460b0a2268c6aebdc29eb86d3f4458/Images/ClassifiedImage.png)  
 
 Please write for any issues [here](https://github.com/samvedya/SARfvc/issues)
+
+Cite as:
+```
+@article{SURAMPUDI2024101361,
+title = {Hybrid Naïve Bayes Gaussian mixture models and SAR polarimetry based automatic flooded vegetation studies using PALSAR-2 data},
+journal = {Remote Sensing Applications: Society and Environment},
+volume = {36},
+pages = {101361},
+year = {2024},
+issn = {2352-9385},
+doi = {https://doi.org/10.1016/j.rsase.2024.101361},
+url = {https://www.sciencedirect.com/science/article/pii/S2352938524002258},
+author = {Samvedya Surampudi and Vijay Kumar},
+}
+```
+Source: https://www.sciencedirect.com/science/article/abs/pii/S2352938524002258?via%3Dihub
